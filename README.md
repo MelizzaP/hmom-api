@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/MelizzaP/hmom-api.png?label=ready&title=Ready)](https://waffle.io/MelizzaP/hmom-api)
 Hamstermom.com API
 ==================
 
