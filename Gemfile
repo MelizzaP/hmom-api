@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #gem for react
-gem 'react-rails', github: 'reactjs/react-rails'
+gem 'react-rails', github: 'reactjs/react-rails', branch:'master'
+gem 'showdown-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
