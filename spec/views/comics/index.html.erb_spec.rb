@@ -10,7 +10,7 @@ RSpec.describe 'comics/index.html.erb' do
   it 'displays a title' do
     assign(:comic, Comic.create!(:title => 'Comic!'))
     
-    render :template => 'comics/index/html.erb'
+    render :template => 'comics/index.html.erb'
     
     expect(rendered).to match /Comic!/
   end
