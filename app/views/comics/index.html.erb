@@ -1,1 +1,6 @@
-<h1> <%= @comics.last.title %> </h1>
+<h1>List of Comics</h1>
+
+<% @comics.each do |comic| %>
+  <a href="#"> <%= comic.title %> </a>
+  <br/>
+<% end %>
