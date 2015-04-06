@@ -1,6 +1,6 @@
 <h1>List of Comics</h1>
 
 <% @comics.each do |comic| %>
-  <a href="#"> <%= comic.title %> </a>
+  <%= link_to comic.title, comic %>
   <br/>
 <% end %>
