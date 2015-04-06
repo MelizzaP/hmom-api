@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'comics#index' 
+  get '/comics', to:'comics#index' 
 end
