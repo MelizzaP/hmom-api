@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :comics
   get '/about', to:'comics#about'
   get '/contact', to: 'comics#contact'
-  get '/othercomics', to: 'comics#other_comics' 
+  get '/othercomics', to: 'comics#other_comics'
 end

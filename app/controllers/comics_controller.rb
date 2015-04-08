@@ -1,19 +1,15 @@
 class ComicsController < ApplicationController
   
   def home
-    
   end
   
   def about
-    
   end
   
   def contact
-    
   end
   
   def other_comics
-    
   end
   
   def index 
