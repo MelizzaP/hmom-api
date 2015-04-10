@@ -9,6 +9,10 @@
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <% if current_admin %>
+    You are signed in as <%= current_admin.email %>.
+  <%= link_to 'sign out', destroy_admin_session_path, :method => :delete %>
+<% end %>
 <center>
 <%= yield %>
 <br/>
