@@ -1,0 +1,11 @@
+<h1>List of Comics</h1>
+
+<% @comics.each do |comic| %>
+  <%= link_to comic.title, comic %>
+  <% if current_admin %>
+    ==>
+    <%= link_to "Edit", edit_comic_path(comic.id) %> |
+    <%= link_to "Delete", comic, method: :delete %>
+  <% end %> 
+  <br/>
+<% end %>

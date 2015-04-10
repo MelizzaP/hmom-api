@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/reactjs/react-rails.git
-  revision: ff564e82f6df668d3979b6ba7747a199f6f01a45
+  revision: 84a4148008611ced71b5051fc9a10a201e3d3db8
   branch: master
   specs:
-    react-rails (1.0.0)
+    react-rails (1.0.0.pre)
       coffee-script-source (~> 1.8)
       connection_pool
       execjs
@@ -154,7 +154,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+<<<<<<< HEAD
+=======
+      json (~> 1.4)
     react-source (0.13.1)
+>>>>>>> f7aba481a3184d5c5b4bbbc2cf5ec1058f623d6c
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.2.2)
@@ -184,9 +188,13 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+<<<<<<< HEAD
+=======
     showdown-rails (0.0.4)
       actionpack (>= 3.1)
       railties (>= 3.1)
+    slop (3.6.0)
+>>>>>>> f7aba481a3184d5c5b4bbbc2cf5ec1058f623d6c
     spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
