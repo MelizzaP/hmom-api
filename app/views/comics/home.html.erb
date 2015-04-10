@@ -1,6 +1,9 @@
 <h1>Hamstermom Home Page</h1>
-<h3><%= link_to "Archive", comics_path %> |
-  <%= link_to "About", about_path %> | 
-  <%= link_to "Contact", contact_path %> |
-  <%= link_to "Other Comics I Enjoy", othercomics_path %>
-</h3>
+<br/>
+<img src= <%= '../' + @comic.img_path %> alt= <%= @comic.hover_text %> title= <%= @comic.hover_text %> width='800' height='600'/> 
+<br />
+<% if current_admin %>
+  <%= link_to "Edit", update_comic_path(@comic.id) %>
+  <br /> <br />
+<% end %> 
+
