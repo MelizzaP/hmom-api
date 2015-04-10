@@ -43,4 +43,9 @@ class ComicsController < ApplicationController
     redirect_to root_path
   end
   
+  def destroy
+    Comic.delete(params['id'])
+    redirect_to root_path
+  end
+  
 end
