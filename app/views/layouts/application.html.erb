@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HmomApi</title>
+  <title>Hamstermom | Webcomic, Blog, Way of life</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<!--   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if current_admin %>
+    You are signed in as <%= current_admin.email %>.
+    <%= link_to 'sign out', destroy_admin_session_path, :method => :delete %>
+  <% end %>
+<center>
 <%= yield %>
-
+<br/>
+<br/>
+  <%= link_to "Home", root_path %>  |
+  <%= link_to "Archive", comics_path %> |
+  <%= link_to "About", about_path %> | 
+  <%= link_to "Contact", contact_path %> |
+  <%= link_to "Other Comics I Enjoy", othercomics_path %> 
+</center>
 </body>
 </html>
