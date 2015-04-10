@@ -18,9 +18,20 @@ class ComicsController < ApplicationController
     @comics = Comic.all
   end
   
+  def new
+    @comic = Comic.new
+  end
+  
   def create
-    comic = Comic.new(comic_params)
+    comic = Comic.new
+    comic.title = params['comic']['title']
+    comic.hover_text = params['comic']['hover_text']
+    comic.img_path = params['comic']['img_path']
+    comic.image_file_name = params['comic']['image_file_name']
+    comic.image_content_type = params['comic']['image_content_type']
+    comic.image_file_size = params['comic']['image_file_size']
     comic.save
+    redirect_to root_path 
   end
   
   def show
