@@ -5,7 +5,7 @@ addons:
   postgresql: "9.3"
 
 before_script:
-  - psql -c 'create database story_test;' -U postgres
+  - psql -c 'create database hmom_api_test;' -U postgres
 
 # uncomment this line if your project needs to run something other than `rake`:
 script: bundle exec rspec
