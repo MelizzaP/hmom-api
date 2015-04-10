@@ -1,4 +1,4 @@
-<%= form_for @comic, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @comic, url: {action: "update", method: 'put'} do |f| %>
   <%= f.label :title %>
   <br/>
   <%= f.text_field :title, size: 40 %>
