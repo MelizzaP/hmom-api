@@ -1,6 +1,8 @@
 class ComicsController < ApplicationController
+  before_action :authenticate_admin!, except: [:home, :about, :comtact, :other_comics, :index, :show]
   
   def home
+    @comic = Comic.last
   end
   
   def about
@@ -25,5 +27,11 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params['id']) 
   end
   
+  def edit
+    @comic = Comic.find(params['id'])  
+  end
+  
+  def update
+  end
   
 end
