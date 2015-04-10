@@ -2,6 +2,7 @@ Hamstermom.com API
 ==================
 
 [![Build Status](https://travis-ci.org/MelizzaP/hmom-api.svg?branch=master)](https://travis-ci.org/MelizzaP/hmom-api)
+[![Stories in Ready](https://badge.waffle.io/MelizzaP/hmom-api.png?label=ready&title=Ready)](https://waffle.io/MelizzaP/hmom-api)
 
 
 This is the backend for a webcomic.  It will allow owners to upload images and captions that will be published on hamstermom.com.  
