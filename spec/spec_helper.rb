@@ -37,7 +37,7 @@ RSpec.configure do |config|
   end
   
   config.before(:suite) do
-    require '#{Rails.root}/db/seeds.rb'
+    require "#{Rails.root}/db/seeds.rb"
   end
   
   # for user authentication with devise
