@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins, skip: [:registrations]
+  devise_for :admins
   root to: 'comics#home'
   resources :comics
   get '/about', to:'comics#about'
