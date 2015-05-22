@@ -7,21 +7,9 @@
   <br/>
   <%= f.text_field :hover_text, size: 40 %>
   <br/><br/>
-  <%= f.label :img_path %>
+  <%= f.label :comic_img %>
   <br/>
-  <%= f.text_field :img_path, size: 40 %>
-  <br/><br/>
-  <%= f.label :image_file_name %>
-  <br/>
-  <%= f.text_field :image_file_name, size: 40 %>
-  <br/><br/>
-  <%= f.label :image_content_type %>
-  <br/>
-  <%= f.text_field :image_content_type, size: 40 %>
-  <br/><br/>
-  <%= f.label :image_file_size %>
-  <br/>
-  <%= f.text_field :image_file_size, size: 40 %>
+  <%= f.file_field :comic_img %>
   <br/><br/>
   <%= f.submit "Create!!!" %>
 <% end %>
