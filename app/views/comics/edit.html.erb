@@ -1,4 +1,4 @@
-<%= form_for @comic, url: {action: "update", method: 'put'} do |f| %>
+<%= form_for @comic, html: {multipart: true}, url: {action: "update", method: 'put'} do |f| %>
   <%= f.label :title %>
   <br/>
   <%= f.text_field :title, size: 40 %>
@@ -7,21 +7,9 @@
   <br/>
   <%= f.text_field :hover_text, size: 40 %>
   <br/><br/>
-  <%= f.label :img_path %>
+  <%= f.label :image %>
   <br/>
-  <%= f.text_field :img_path, size: 40 %>
+  <%= f.file_field :image, size: 40 %>
   <br/><br/>
-  <%= f.label :image_file_name %>
-  <br/>
-  <%= f.text_field :image_file_name, size: 40 %>
-  <br/><br/>
-  <%= f.label :image_content_type %>
-  <br/>
-  <%= f.text_field :image_content_type, size: 40 %>
-  <br/><br/>
-  <%= f.label :image_file_size %>
-  <br/>
-  <%= f.text_field :image_file_size, size: 40 %>
-  <br/><br/>
-  <%= f.submit "Update" %>
+  <%= f.submit "Update B-)" %>
 <% end %>
