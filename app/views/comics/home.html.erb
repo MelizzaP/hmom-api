@@ -1,7 +1,7 @@
 <h1>Hamstermom Home Page</h1>
 <br/>
-<% if @comic[:comic_img] %>
-  <%= image_tag @comic[:comic_img].url %>
+<% if @comic[:image_file_name] %>
+  <%= image_tag @comic.image.url %>
 <% end %>
 <br />
 <% if current_admin %>
