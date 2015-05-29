@@ -40,7 +40,6 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry-byebug'
 
@@ -49,16 +48,16 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+
   #respec stuff
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
-  # gem 'launchy'
-  
+
   gem 'rake'
-  
+
+  gem 'jazz_hands'
 end
 
 gem 'paperclip'
