@@ -23,7 +23,7 @@ class ComicsController < ApplicationController
   end
 
   def create
-    Comic.create( comic_params[:comic] )
+    Comic.create(comic_params)
     redirect_to root_path
   end
 
@@ -37,7 +37,7 @@ class ComicsController < ApplicationController
 
   def update
     comic = Comic.find(params['id'])
-    comic.update( comic_params[:comic] )
+    comic.update(comic_params)
     redirect_to root_path
   end
 
@@ -52,6 +52,6 @@ class ComicsController < ApplicationController
   # # Be sure to update your create() and update() controller methods.
 
   def comic_params
-    params.require(:comic).permit(:comic_img, :title, :hover_text)
+    params.require(:comic).permit(:title, :hover_text, :image)
   end
 end
