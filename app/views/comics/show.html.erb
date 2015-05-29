@@ -1,6 +1,7 @@
 <h1><%= @comic.title %></h1>
-<% if @comic[:image_file_name] %>
-  <%= image_tag @comic.image.url %>
+<% if @comic.image_file_name %>
+  <br /><br />
+  <%= image_tag(@comic.image.url, title: @comic.hover_text) %>
 <% end %>
 <br/><br/>
 <% if current_admin %>
