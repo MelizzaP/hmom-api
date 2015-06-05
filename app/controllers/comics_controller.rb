@@ -3,6 +3,7 @@ class ComicsController < ApplicationController
 
   def home
     @comic = Comic.last
+    @random = Comic.select('id').order('random()').first
   end
 
   def about
