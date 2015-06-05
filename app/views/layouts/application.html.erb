@@ -3,7 +3,7 @@
 <head>
   <title>Hamstermom | Webcomic, Blog, Way of life</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<!--   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,7 +19,7 @@
 <br/>
   <%= link_to "Home", root_path %>  |
   <%= link_to "Archive", comics_path %> |
-  <%= link_to "About", about_path %> | 
+  <%= link_to "About", about_path %> |
   <%= link_to "Contact", contact_path %> |
   <%= link_to "Other Comics I Enjoy", othercomics_path %> 
 </center>
