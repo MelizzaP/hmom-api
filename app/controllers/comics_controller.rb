@@ -30,6 +30,7 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params['id'])
+    @random = Comic.select('id').order('random()').first
   end
 
   def edit
