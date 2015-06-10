@@ -1,7 +1,7 @@
 Admin.create(
   {
-    :email => 'mp@me.com',
-    :password => 'a',
-    :password_validation => 'a'
+    :email => ENV['GMAIL'],
+    :password => ENV['HMOM_PWORD'],
+    :password_validation => ENV['HMOM_PWORD']
   }
 )
