@@ -1,84 +1,44 @@
-# Change these
-server '45.55.177.126', port: 7853, roles: [:web, :app, :db], primary: true
+require 'bundler/capistrano'
 
-set :repo_url,        'git@github.com:MelizzaP/hmom-api.git'
-set :application,     'hmom'
-set :user,            'melizza'
-set :puma_threads,    [4, 16]
-set :puma_workers,    0
+set :application, "Hamstermom"
+set :repository,  "git@github.com:MelizzaP/hmom-api.git"
+set :group, "deployers"
+set :scm, :git
+set :scm_passphrase, ""
+set :branch, "master"
+set :user, "melizza"
+set :use_sudo, false
+set :rails_env, "production"
+set :deploy_via, :copy
+set :ssh_options, { :forward_agent => true, :port => 7853 }
+set :keep_releases, 5
+default_run_options[:pty] = true
+server "hamstermom.com", :app, :web, :db, :primary => true
 
-# Don't change these unless you know what you're doing
-set :pty,             true
-set :use_sudo,        false
-set :stage,           :production
-set :deploy_via,      :remote_cache
-set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
-set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
-set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
-set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
-set :puma_access_log, "#{release_path}/log/puma.error.log"
-set :puma_error_log,  "#{release_path}/log/puma.access.log"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
-set :puma_preload_app, true
-set :puma_worker_timeout, nil
-set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
 
-## Defaults:
-# set :scm,           :git
-# set :branch,        :master
-# set :format,        :pretty
-# set :log_level,     :debug
-# set :keep_releases, 5
+  desc "Symlink shared config files"
+  task :symlink_config_files do
+    run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+  end
 
-## Linked Files & Directories (Default None):
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+  # NOTE: I don't use this anymore, but this is how I used to do it.
+  desc "Precompile assets after deploy"
+  task :precompile_assets do
+    run <<-CMD
+      cd #{ current_path } &&
+      #{ sudo } bundle exec rake assets:precompile RAILS_ENV=#{ rails_env }
+    CMD
+  end
 
-namespace :puma do
-  desc 'Create Directories for Puma Pids and Socket'
-    task :make_dirs do
-        on roles(:app) do
-              execute "mkdir #{shared_path}/tmp/sockets -p"
-                    execute "mkdir #{shared_path}/tmp/pids -p"
-                        end
-                          end
+  desc "Restart applicaiton"
+  task :restart do
+    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+  end
+end
 
-                            before :start, :make_dirs
-                            end
-
-                            namespace :deploy do
-                              desc "Make sure local git is in sync with remote."
-                                task :check_revision do
-                                    on roles(:app) do
-                                          unless `git rev-parse HEAD` == `git rev-parse origin/master`
-                                                  puts "WARNING: HEAD is not the same as origin/master"
-                                                          puts "Run `git push` to sync changes."
-                                                                  exit
-                                                                        end
-                                                                            end
-                                                                              end
-
-                                                                                desc 'Initial Deploy'
-                                                                                  task :initial do
-                                                                                      on roles(:app) do
-                                                                                            before 'deploy:restart', 'puma:start'
-                                                                                                  invoke 'deploy'
-                                                                                                      end
-                                                                                                        end
-
-                                                                                                          desc 'Restart application'
-                                                                                                            task :restart do
-                                                                                                                on roles(:app), in: :sequence, wait: 5 do
-                                                                                                                      invoke 'puma:restart'
-                                                                                                                          end
-                                                                                                                            end
-
-                                                                                                                              before :starting,     :check_revision
-                                                                                                                                after  :finishing,    :compile_assets
-                                                                                                                                  after  :finishing,    :cleanup
-                                                                                                                                    after  :finishing,    :restart
-                                                                                                                                    end
-
-                                                                                                                                    # ps aux | grep puma    # Get puma pid
-                                                                                                                                    # kill -s SIGUSR2 pid   # Restart puma
-                                                                                                                                    # kill -s SIGTERM pid   # Stop puma
+after "deploy", "deploy:symlink_config_files"
+after "deploy", "deploy:restart"
+after "deploy", "deploy:cleanup"

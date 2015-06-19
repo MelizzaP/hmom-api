@@ -18,11 +18,11 @@ gem 'puma'
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails'
