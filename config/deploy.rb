@@ -1,5 +1,10 @@
 require 'bundler/capistrano'
+require 'capistrano-db-tasks'
 
+set :db_local_clean, true
+set :db_remote_clean, true
+set :assets_dir, %w(public/assets public/att)
+set :local_assets_dir, %w(public/assets public/att)
 set :application, "Hamstermom"
 set :repository,  "git@github.com:MelizzaP/hmom-api.git"
 set :group, "deployers"
@@ -32,6 +37,8 @@ namespace :deploy do
       #{ sudo } bundle exec rake assets:precompile RAILS_ENV=#{ rails_env }
     CMD
   end
+
+  invoke 'unicorn:restart'
 
   desc "Restart applicaiton"
   task :restart do

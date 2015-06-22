@@ -16,8 +16,6 @@
 # Don't use `:all`, it's a meta role.
 
 role :app, %w{melizza@45.55.177.126}
-role :web, %w{melizza@45.55.177.126}
-role :db,  %w{melizza@45.55.177.126}
 
 #Define Server
 server '45.55.177.16', user: 'melizza', roles: %w{web}
