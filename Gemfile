@@ -30,7 +30,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'rake'
-  gem 'jazz_hands'
 end
 
 group :production, :staging do
