@@ -14,5 +14,3 @@
 /vendor
 /db/*.sql
 /config/database.yml
-### Important prod shit
-.rbenv-vars
