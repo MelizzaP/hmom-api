@@ -13,4 +13,3 @@
 /tmp
 /vendor
 /db/*.sql
-/config/database.yml
