@@ -12,6 +12,4 @@
 !/log/.keep
 /tmp
 /vendor
-
-### Important prod shit
-.rbenv-vars
+/db/*.sql
