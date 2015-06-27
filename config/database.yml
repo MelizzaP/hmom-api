@@ -24,8 +24,6 @@ development: &default
 test:
   <<: *default
   database: hmom_api_test
-  username: hmom
-  password: <%= ENV['HMOM_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
