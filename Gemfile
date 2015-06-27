@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'paperclip'
 gem 'puma'
+gem 'rubocop', require: false
 
 group :development do
   gem 'capistrano'
