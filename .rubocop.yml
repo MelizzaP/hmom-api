@@ -1,0 +1,90 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+    - '**/*.rake'
+  Exclude:
+    - 'db/migrate/**'
+    - 'db/schema.rb'
+    - 'script/**/*'
+    - 'vendor/**/*'
+  DisplayCopNames: true
+  RunRailsCops: true
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - 'config/routes.rb'
+
+Metrics/ClassLength:
+  Max: 200
+
+Rails/Delegate:
+  Exclude:
+    - 'app/policies/**'
+
+Rails/Output:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyLines:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/IndentHash:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/NumericLiterals:
+  MinDigits: 7
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
