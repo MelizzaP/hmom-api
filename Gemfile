@@ -14,15 +14,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'paperclip'
 gem 'puma'
+gem 'rubocop', require: false
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+end
 
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails'
@@ -30,7 +31,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'rake'
-  gem 'jazz_hands'
 end
 
 group :production, :staging do
