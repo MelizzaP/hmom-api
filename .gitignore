@@ -14,3 +14,4 @@
 /vendor
 /db/*.sql
 /config/database.yml
+/config/secrets.yml
