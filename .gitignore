@@ -13,5 +13,5 @@
 /tmp
 /vendor
 /db/*.sql
-/config/database.yml
+# /config/database.yml
 /config/secrets.yml
