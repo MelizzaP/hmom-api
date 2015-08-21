@@ -1,6 +1,24 @@
 set :stage, :production
 
-server 'hamstermom.com', user: 'melizza', roles: %w{app db web}, my_property: :my_value
+server '104.236.221.116', user: 'mp', roles: %w{app db web}, port: 7853
+
+role :app, %w{mp@104.236.221.116}
+
+set :bundle_env_variables, { 'NOKOGIRI_USE_SYSTEM_LIBRARIES' => 1 }
+
+# role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
+# role :db,  %w{deploy@example.com}
+
+# Configuration
+# =============
+# You can set any configuration variable like in config/deploy.rb
+# These variables are then only loaded and set in this stage.
+# For available Capistrano configuration variables see the documentation page.
+# http://capistranorb.com/documentation/getting-started/configuration/
+# Feel free to add new variables to customise your setup.
+
+
+
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a

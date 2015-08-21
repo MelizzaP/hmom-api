@@ -19,6 +19,9 @@ gem 'rubocop', require: false
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
 group :development, :test do
