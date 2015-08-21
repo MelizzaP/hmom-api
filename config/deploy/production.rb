@@ -4,6 +4,8 @@ server '104.236.221.116', user: 'mp', roles: %w{app db web}, port: 7853
 
 role :app, %w{mp@104.236.221.116}
 
+set :bundle_env_variables, { 'NOKOGIRI_USE_SYSTEM_LIBRARIES' => 1 }
+
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
