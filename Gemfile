@@ -23,6 +23,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-passenger'
   gem 'capistrano-postgresql'
+  gem 'passenger'
 end
 
 group :development, :test do
