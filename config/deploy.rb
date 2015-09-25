@@ -16,6 +16,7 @@ set :linked_dirs, fetch(:linked_dirs, [])
 set :default_env, { path: "/usr/local/bin:$PATH" }
 SSHKit.config.command_map[:composer] = "/usr/local/bin/composer"
 set :keep_releases, 5
+set :passenger_restart_with_sudo, true
 
 namespace :deploy do
   namespace :assets do
