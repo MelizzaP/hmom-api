@@ -21,9 +21,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
-  gem 'capistrano-passenger'
   gem 'capistrano-postgresql'
-  gem 'passenger'
+  gem 'capistrano3-unicorn'
 end
 
 group :development, :test do
