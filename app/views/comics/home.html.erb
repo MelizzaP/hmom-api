@@ -15,8 +15,10 @@
   <br /> <br />
 <% end %>
 
-<%= link_to_if(@comic != Comic.first, 'prev', comic_path(@comic.id - 1)) %> |
-<%= link_to 'random', comic_path(@random) %> |
-<%= link_to_if(@comic != Comic.last, 'next', comic_path(@comic.id + 1)) %>
+<% if @comic && @comic.image_file_name %>
+  <%= link_to_if(@comic != Comic.first, 'prev', comic_path(@comic.id - 1)) %> |
+  <%= link_to 'random', comic_path(@random) %> |
+  <%= link_to_if(@comic != Comic.last, 'next', comic_path(@comic.id + 1)) %>
+<% end %>
 
 <br />
