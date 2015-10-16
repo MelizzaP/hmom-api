@@ -22,28 +22,5 @@ set :keep_releases, 5
 set :sudo_prompt, ""
 set :ssh_options, {forward_agent: true}
 set :local_repository, "ssh://mp@104.236.19.23/home/mp/repositories/hamstermom"
+set :use_sudo, false
 
-namespace :deploy do
-  namespace :assets do
-    task [:precompile, roles: :web] do
-      from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ lib/assets/ app/assets/ | wc -l").to_i > 0
-        run_locally("rake assets:clean && rake assets:precompile")
-        run_locally "cd public && tar -jcf assets.tar.bz2 assets"
-        top.upload "public/assets.tar.bz2", "#{shared_path}", via: :scp
-        run "cd #{shared_path} && tar -jxf assets.tar.bz2 && rm assets.tar.bz2"
-        run_locally "rm public/assets.tar.bz2"
-        run_locally("rake assets:clean")
-      else
-        logger.info "Skipping asset precompilation because there were no asset changes"
-      end
-
-      after 'deploy:publishing', 'deploy:restart'
-      namespace :deploy do
-        task :restart do
-          invoke 'unicorn:reload'
-        end
-      end
-    end
-  end
-end
