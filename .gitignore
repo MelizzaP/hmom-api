@@ -12,6 +12,20 @@
 !/log/.keep
 /tmp
 /vendor
+
+# Ignore database shiz
 /db/*.sql
 config/database.yml
 config/secrets.yml
+
+# Ruby version managers
+.rvmrc
+.ruby-gemset
+
+# CoffeeScript source maps
+public/assets/source_maps
+
+# node modules
+node_modules/
+bower_components/
+npm-debug.log
