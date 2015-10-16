@@ -10,6 +10,23 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//--------------------
+//   BOWER
+//-------------------
+//= require underscore
+//
+//-------------------
+//      ANGULAR
+//-------------------
+//= require angular
+//= require angular-bootstrap
+//
+//-------------------
+//    TESTING
+//-------------------
+//= require jasmine-fixture
+//= require jasmine-jquery
+//
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
