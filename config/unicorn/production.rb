@@ -1,5 +1,5 @@
 # set path to application
-app_dir = File.expand_path("/var/www/hmom")
+app_dir = File.expand_path("/var/www/hmom/current/")
 shared_dir = "#{app_dir}/shared"
 working_directory app_dir
 
