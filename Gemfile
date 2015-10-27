@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
 gem 'bootstrap-sass'
 gem 'bower-rails'
 gem 'coffee-rails', '~> 4.1.0'
