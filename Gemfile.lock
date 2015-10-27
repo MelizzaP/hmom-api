@@ -56,6 +56,11 @@ GEM
     autoprefixer-rails (5.1.7.1)
       execjs
       json
+    aws-sdk (1.60.2)
+      aws-sdk-v1 (= 1.60.2)
+    aws-sdk-v1 (1.60.2)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     babel-source (5.4.7)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -289,6 +294,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   bootstrap-sass
   bower-rails
   byebug

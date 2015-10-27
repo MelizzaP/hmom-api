@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # paperclip will store and pull images from aws b/c heroku is not
+  # into storing images in an app
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV['S3_BN'],
+      access_key_id: ENV['AWS_AKI'],
+      secret_access_key: ENV['AWS_SAK']
+    }
+  }
 end
