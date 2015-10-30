@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk'
 gem 'bootstrap-sass'
+gem 'bourbon'
 gem 'bower-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
