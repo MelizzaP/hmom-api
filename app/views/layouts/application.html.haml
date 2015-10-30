@@ -6,11 +6,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{'ng-app' => 'hmomApp'}
-    %p.notice= notice
-    %p.alert= alert
-    - if current_admin
-      You are signed in as #{current_admin.email}.
-      \#{link_to 'sign out', destroy_admin_session_path, :method => :delete}
+    .row-fluid.notifications
+      - if current_admin
+        You are signed in as #{current_admin.email}.
+        \#{link_to 'sign out', destroy_admin_session_path, :method => :delete}
+    .notice= notice
+    .alert= alert
     %center
       = yield
       #{link_to "home", root_path}
