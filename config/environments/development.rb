@@ -42,4 +42,15 @@ Rails.application.configure do
 
   # connects paperclip to imagemagick
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV['S3_BN'],
+      access_key_id: ENV['AWS_AKI'],
+      secret_access_key: ENV['AWS_SAK']
+    },
+    url: ':s3_domain_url',
+    path: '/:class/:attachment/:id_partition/:style/:filename'
+  }
 end
