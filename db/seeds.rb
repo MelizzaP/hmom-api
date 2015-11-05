@@ -266,12 +266,12 @@ comics = [
 ]
 
 # comics seed
-comics.each do |comic|
-  Comic.create(
-    {
-      title: comic[:title],
-      hover_text: comic[:hover_text],
-      image: File.new("#{Rails.root}/app/assets/images/comic/#{comic[:image]}")
-    }
-  )
-end
+# comics.each do |comic|
+#   Comic.create(
+#     {
+#       title: comic[:title],
+#       hover_text: comic[:hover_text],
+#       image: File.new("#{Rails.root}/app/assets/images/comic/#{comic[:image]}")
+#     }
+#   )
+# end
