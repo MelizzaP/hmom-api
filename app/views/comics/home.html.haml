@@ -12,6 +12,6 @@
           = link_to "Edit", edit_comic_path(@comic.id)
           = link_to "Delete", @comic, method: :delete
     .row.comic-nav-links
-      = link_to_if(@comic != Comic.first, 'prev' comic_path(@comic.id - 1))
+      = link_to_if(@comic != Comic.first, 'prev', comic_path(@comic.id - 1))
       = link_to 'random', comic_path(@random)
       = link_to_if(@comic != Comic.last, 'next', comic_path(@comic.id + 1))
