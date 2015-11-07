@@ -15,8 +15,10 @@
     .alert= alert
     %center
       = yield
-      #{link_to "home", root_path}
-      #{link_to "archive", comics_path}
-      #{link_to "about", about_path}
-      #{link_to "contact", contact_path}
-      #{link_to "other comics i enjoy", othercomics_path}
+      .container.nav-foot
+        .row
+          #{link_to "home", root_path}
+          #{link_to "archive", comics_path}
+          #{link_to "about", about_path}
+          #{link_to "contact", contact_path}
+          #{link_to "other comics i enjoy", othercomics_path}

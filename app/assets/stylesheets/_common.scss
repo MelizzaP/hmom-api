@@ -16,53 +16,14 @@ body {
     border: $container-border 2px solid;
     margin-top: 30px;
     width: 300px;
-
-    a {
-      display: inline;
-      margin: 10px;
-    }
   }
 }
 
-.comic-container {
-  background: $container-background;
-  border: $container-border 15px solid;
-  border-radius: $comic-container-border-radius;
-  font-size: $medium;
-  margin: 30px 0;
-  width: 75%;
-
-  .comic-title {
-    font-size: $medium;
-    margin: -15px 0;
-  }
-
-  .comic-nav-links,
-  .admin-links {
-    margin: 10px;
-  }
-
-  a {
-    color: $a-color-comic-pane;
-    border: $a-color-comic-pane 4px solid;
-    border-radius: 6px;
-    margin: 0 4px;
-    padding: 1.5px 12px;
-  }
-
-  a:hover {
-    border: none;
-  }
-
-  img {
-    border-radius: $comic-image-border-radius;
-    height: auto;
-    width: 100%;
-  }
-}
 
 a {
   color: $a-color;
+  display: inline;
+  margin: 10px;
 }
 
 a:visited,
