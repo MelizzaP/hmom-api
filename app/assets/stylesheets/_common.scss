@@ -2,6 +2,7 @@ body {
   background: $background;
   font-family: $defont;
   margin: 0 auto;
+  text-color: $text-color;
   width: auto;
 
   .notifications {
@@ -36,9 +37,35 @@ body {
     margin: -15px 0;
   }
 
+  .comic-nav-links,
+  .admin-links {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $a-color-comic-pane;
+    border: $a-color-comic-pane 4px solid;
+    border-radius: 6px;
+    margin: 0 4px;
+    padding: 1.5px 12px;
+  }
+
+  a:hover {
+    border: none;
+  }
+
   img {
     border-radius: $comic-image-border-radius;
     height: auto;
     width: 100%;
   }
+}
+
+a {
+  color: $a-color;
+}
+
+a:visited,
+a:hover {
+  color: $a-visited-color;
 }
