@@ -1,0 +1,44 @@
+body {
+  background: $background;
+  font-family: $defont;
+  margin: 0 auto;
+  width: auto;
+
+  .notifications {
+    display: inline;
+    float: right;
+    padding: 10px 10px 0 0;
+  }
+
+  .site-nav {
+    background: $background;
+    border: $container-border 2px solid;
+    margin-top: 30px;
+    width: 300px;
+
+    a {
+      display: inline;
+      margin: 10px;
+    }
+  }
+}
+
+.comic-container {
+  background: $container-background;
+  border: $container-border 15px solid;
+  border-radius: $comic-container-border-radius;
+  font-size: $medium;
+  margin: 30px 0;
+  width: 75%;
+
+  .comic-title {
+    font-size: $medium;
+    margin: -15px 0;
+  }
+
+  img {
+    border-radius: $comic-image-border-radius;
+    height: auto;
+    width: 100%;
+  }
+}

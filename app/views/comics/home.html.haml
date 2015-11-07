@@ -1,19 +1,17 @@
 %h1 Hamstermom Home Page
 - if @comic && @comic.image_file_name
-  %h3= @comic.title
-  = image_tag(@comic.image.url, title: @comic.hover_text)
-  %br/
-  - if current_admin
-    = link_to 'Add Comic!!!!!', new_comic_path
-    |
-    - if @comic
-      = link_to "Edit", edit_comic_path(@comic.id)
-      |
-      \#{link_to "Delete", @comic, method: :delete}
-    %br/
-    %br/
-  = link_to_if(@comic != Comic.first, 'prev', comic_path(@comic.id - 1))
-  |
-  \#{link_to 'random', comic_path(@random)} |
-  \#{link_to_if(@comic != Comic.last, 'next', comic_path(@comic.id + 1))}
-  %br/
+  .container.comic-container
+    .row.comic-title= @comic.title
+    .row.comic-image
+      .col-md-8.col-md-offset-2
+        = image_tag(@comic.image.url, title: @comic.hover_text)
+    - if current_admin
+      .row
+        = link_to 'Add Comic!!!!!', new_comic_path
+        - if @comic
+          = link_to "Edit", edit_comic_path(@comic.id)
+          = link_to "Delete", @comic, method: :delete
+    .row
+      = link_to_if(@comic != Comic.first, 'prev', comic_path(@comic.id - 1))
+      = link_to 'random', comic_path(@random)
+      = link_to_if(@comic != Comic.last, 'next', comic_path(@comic.id + 1))
