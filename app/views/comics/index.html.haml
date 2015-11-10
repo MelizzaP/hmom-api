@@ -1,7 +1,7 @@
-%h1 List of Comics
-- @comics.each do |comic|
-  = link_to comic.title, comic
-  - if current_admin
-    \#{link_to "Edit", edit_comic_path(comic.id)} |
-    \#{link_to "Delete", comic, method: :delete}
-  %br/
+.container.archive
+  - @comics.each do |comic|
+    .row= link_to comic.title, comic
+    .admin-link
+      - if current_admin
+        #{link_to "Edit", edit_comic_path(comic.id)}
+        #{link_to "Delete", comic, method: :delete}

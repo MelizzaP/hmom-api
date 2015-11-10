@@ -1,0 +1,13 @@
+.archive {
+  background: $container-background;
+  border: $container-border 8px solid;
+  border-radius: $comic-container-border-radius;
+  font-size: $medium;
+  margin-bottom: 10px;
+  width: 75%;
+
+  .admin-link {
+    font-size: $lil;
+    margin-top: -10px;
+  }
+}

@@ -10,7 +10,7 @@
     .row-fluid.notifications
       - if current_admin
         You are signed in as #{current_admin.email}.
-        \#{link_to 'sign out', destroy_admin_session_path, :method => :delete}
+        #{link_to 'sign out', destroy_admin_session_path, :method => :delete}
     .notice= notice
     .alert= alert
     %center
