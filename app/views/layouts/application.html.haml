@@ -14,10 +14,10 @@
     .notice= notice
     .alert= alert
     %center
+      .conatiner.header= link_to image_tag('hmom-logo.png'), root_path
       = yield
       .container.nav-foot
         .row
-          #{link_to "home", root_path}
           #{link_to "archive", comics_path}
           #{link_to "about", about_path}
           #{link_to "contact", contact_path}

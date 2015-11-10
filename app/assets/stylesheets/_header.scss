@@ -1,0 +1,17 @@
+.header {
+  background-color: $container-background;
+  border: $container-border 8px solid;
+  border-radius: $comic-container-border-radius;
+  font-size: $medium;
+  margin-bottom: 10px;
+  width: 75%;
+
+  img {
+    height: auto;
+    width: 70%;
+  }
+
+  .row {
+    margin: 10px 0;
+  }
+}
