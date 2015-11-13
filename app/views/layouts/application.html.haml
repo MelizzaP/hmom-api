@@ -14,11 +14,12 @@
     .notice= notice
     .alert= alert
     %center
-      .conatiner.header= link_to image_tag('hmom-logo.png'), root_path
+      .conatiner.header= link_to image_tag('hmom-logo.png'), root_path, data: {keybinding: 'h'}
       = yield
       .container.nav-foot
         .row
-          #{link_to "archive", comics_path}
-          #{link_to "about", about_path}
-          #{link_to "contact", contact_path}
-          #{link_to "other comics i enjoy", othercomics_path}
+          #{link_to "archive", comics_path, data: {keybinding: 'a'}}
+          #{link_to "about", about_path, data: {keybinding: 'a b'}}
+          #{link_to "contact", contact_path, data: {keybinding: 'c'}}
+          #{link_to "other comics i enjoy", othercomics_path, data: {keybinding: 'o'}}
+      .sign-in= link_to nil, new_admin_session_path, data: {keybinding: 'command+shift+s'}
