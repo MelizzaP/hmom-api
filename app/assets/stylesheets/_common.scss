@@ -30,3 +30,9 @@ a:visited,
 a:hover {
   color: $a-visited-color;
 }
+
+.sign-in {
+  a {
+    display: none;
+  }
+}
