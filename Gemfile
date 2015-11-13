@@ -27,6 +27,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'jazz_fingers'
   gem 'pry-byebug'
   gem 'rake'
   gem 'rspec-rails'
