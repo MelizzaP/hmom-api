@@ -45,8 +45,18 @@ a:hover {
   margin: 30px 0;
   width: 75%;
 
+  .title {
+    font-size: $smedium;
+    text-decoration: underline;
+  }
+
   p {
     font-family: $other-font;
     font-size: $lil;
+  }
+
+  ul {
+    list-style-type: none;
+    font-size: $small;
   }
 }
