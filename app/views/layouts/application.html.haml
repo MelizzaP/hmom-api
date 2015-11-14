@@ -14,11 +14,15 @@
     .notice= notice
     .alert= alert
     %center
-      .conatiner.header= link_to image_tag('hmom-logo.png'), root_path, data: {keybinding: 'h'}
+      .conatiner.header= link_to image_tag('hmom-logo.png'),
+        root_path, data: {keybinding: 'h'}, title: 'shortcut: h'
       = yield
       .container.nav-foot
         .row
-          #{link_to "archive", comics_path, data: {keybinding: 'a'}}
-          #{link_to "about", about_path, data: {keybinding: 'a b'}}
-          #{link_to "other comics i enjoy", othercomics_path, data: {keybinding: 'o'}}
+          = link_to "archive", comics_path,
+            data: {keybinding: 'a'}, title: 'shortcut: a'
+          = link_to "about", about_path,
+            data: {keybinding: 'a b'}, title: 'shortcut: a b'
+          = link_to "other comics i enjoy", othercomics_path,
+            data: {keybinding: 'o'}, title: 'shortcut: o'
       .sign-in= link_to nil, new_admin_session_path, data: {keybinding: 'command+shift+s'}
