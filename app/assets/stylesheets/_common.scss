@@ -36,3 +36,17 @@ a:hover {
     display: none;
   }
 }
+
+.common-container {
+  background: $container-background;
+  border: $container-border 8px solid;
+  border-radius: $comic-container-border-radius;
+  font-size: $medium;
+  margin: 30px 0;
+  width: 75%;
+
+  p {
+    font-family: $other-font;
+    font-size: $lil;
+  }
+}
