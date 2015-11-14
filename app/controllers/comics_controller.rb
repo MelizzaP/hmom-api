@@ -1,18 +1,9 @@
 class ComicsController < ApplicationController
-  before_action :authenticate_admin!, except: [:home, :about, :comtact, :other_comics, :index, :show]
+  before_action :authenticate_admin!, except: [:home, :about, :other_comics, :index, :show]
 
   def home
     @comic = Comic.last
     @random = Comic.select('id').order('random()').first
-  end
-
-  def about
-  end
-
-  def contact
-  end
-
-  def other_comics
   end
 
   def index
