@@ -3,6 +3,9 @@ class ComicsController < ApplicationController
 
   def home
     @comic = Comic.last
+    if @comic
+      @prev = @comic.prev
+    end
     @random = Comic.select('id').order('random()').first
   end
 
@@ -21,6 +24,8 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params['id'])
+    @prev = @comic.prev
+    @next = @comic.next
     @random = Comic.select('id').order('random()').first
   end
 
@@ -45,6 +50,6 @@ class ComicsController < ApplicationController
   # # Be sure to update your create() and update() controller methods.
 
   def comic_params
-    params.require(:comic).permit(:title, :hover_text, :image)
+    params.require(:comic).permit(:id, :title, :hover_text, :image)
   end
 end
